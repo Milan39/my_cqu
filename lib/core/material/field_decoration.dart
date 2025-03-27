@@ -18,11 +18,11 @@ InputDecoration baseFieldDecoration({
     borderSide: BorderSide(color: borderColor, width: 0.05),
   );
   return InputDecoration(
-    contentPadding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 10.r),
+    contentPadding: EdgeInsets.symmetric(vertical: 12.r, horizontal: 20.r),
     hintText: hintText,
     errorMaxLines: 2,
     filled: true,
-    fillColor: Colors.transparent,
+    fillColor: kSecondaryBlue,
     errorStyle: GoogleFonts.roboto(
       fontSize: 12.sp,
       fontWeight: FontWeight.w400,
@@ -30,9 +30,9 @@ InputDecoration baseFieldDecoration({
       color: Colors.red,
     ),
     hintStyle: GoogleFonts.roboto(
-      fontSize: 12.sp,
-      letterSpacing: 1.5,
-      color: hintTextColor,
+      fontSize: 13.sp,
+      letterSpacing: 1.2,
+      color: kSecondaryGrey,
       fontWeight: FontWeight.w400,
     ),
     errorBorder: OutlineInputBorder(
@@ -45,7 +45,7 @@ InputDecoration baseFieldDecoration({
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide(color: Colors.white),
+      borderSide: BorderSide(color: kBrandColor),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: borderRadius,
@@ -72,6 +72,7 @@ InputDecoration textFieldDecoration({
 InputDecoration passwordFieldDecoration({
   required String hintText,
   required Widget suffixIcon,
+  Color hintTextColor = Colors.grey,
   double radius = 5,
 }) {
   return baseFieldDecoration(

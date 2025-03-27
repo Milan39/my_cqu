@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:my_cqu/feature/auth/screen/login_screen.dart';
+import 'package:my_cqu/feature/home/screen/home_screen.dart';
 import 'package:my_cqu/feature/splash/screen/splash_screen.dart';
 
 class AppRoutes {
@@ -11,7 +12,16 @@ class AppRoutes {
         path: '/splash',
         builder: (context, state) => const SplashScreen(),
       ),
-      GoRoute(name: 'login', path: '/login', builder: (context, state)=> const LoginScreen()),
+      GoRoute(
+        name: 'login',
+        path: '/login',
+        builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        name: 'home',
+        path: '/home',
+        builder: (context, state) => const HomeScreen(),
+      ),
     ],
   );
 }

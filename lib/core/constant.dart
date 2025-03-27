@@ -7,3 +7,4 @@ Color kErrorColor = Color(0xFFEF4444);
 
 // Secondary Colors
 Color kSecondaryGrey = Color(0xFFB6BAC3);
+Color kSecondaryBlue = Color(0xFF1A4B74);

@@ -53,7 +53,7 @@ class CustomTextField extends StatelessWidget {
                 TextSpan(
                   text: hasAstric ? " *" : "",
                   style: TextStyle(
-                    fontSize: 14.sp,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.w400,
                     color: kErrorColor,
                   ),
