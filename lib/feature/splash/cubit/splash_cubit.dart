@@ -31,7 +31,9 @@ class SplashCubit extends Cubit<SplashState> {
   }
 
   Future<void> _loadAppState() async {
+    emit(state.copyWith(status: SplashStatus.authenticating));
     await Future.delayed(Duration(seconds: 3));
+    emit(state.copyWith(status: SplashStatus.authorized));
   }
 
 

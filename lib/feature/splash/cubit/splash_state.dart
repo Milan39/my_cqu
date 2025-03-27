@@ -1,6 +1,6 @@
 part of 'splash_cubit.dart';
 
-enum SplashStatus { initial, authorized, unauthorized }
+enum SplashStatus { initial, authenticating, authorized, unauthorized }
 
 class SplashState extends Equatable {
   final SplashStatus status;
