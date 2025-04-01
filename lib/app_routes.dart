@@ -5,7 +5,7 @@ import 'package:my_cqu/feature/splash/screen/splash_screen.dart';
 
 class AppRoutes {
   static final GoRouter router = GoRouter(
-    initialLocation: '/home',
+    initialLocation: '/login',
     routes: [
       GoRoute(
         name: 'splash',
