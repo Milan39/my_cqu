@@ -5,7 +5,9 @@ import 'package:gap/gap.dart';
 import 'package:my_cqu/core/constant.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({super.key});
+  final String title;
+
+  const HomeAppBar({super.key, required this.title});
 
   @override
   Size get preferredSize => const Size.fromHeight(40);
@@ -18,7 +20,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: Colors.white,
       elevation: 0.0,
       title: Text(
-        "Home",
+        title,
         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
@@ -39,9 +41,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Gap(10.w),
-
       ],
     );
   }
-
 }

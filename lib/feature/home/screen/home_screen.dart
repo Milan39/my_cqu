@@ -20,8 +20,9 @@ class HomeScreen extends StatelessWidget {
       create: (context) => sl<BottomNavBarCubit>(),
       child: BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
         builder: (context, state) {
+          final title = state.navbarItems[state.currentNavBarIndex].label;
           return Scaffold(
-            appBar: HomeAppBar(),
+            appBar: HomeAppBar(title: title),
             bottomNavigationBar: BottomAppBar(
               height: 70.h,
               color: Colors.white,
