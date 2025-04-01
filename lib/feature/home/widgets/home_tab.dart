@@ -21,7 +21,7 @@ class HomeTab extends StatelessWidget {
               return GestureDetector(
                 onTap: ()=> context.read<HomeScreenCubit>().switchTab(index),
                 child: Container(
-                  margin: EdgeInsets.only(right: 10.w),
+                  margin: EdgeInsets.only(right: 10.w, left: index == 0? 10.w: 0),
                   padding: EdgeInsets.all(10.sp),
                   decoration: BoxDecoration(
                     color: isSelected? kBrandColor: Colors.white,
