@@ -8,7 +8,6 @@ import 'package:my_cqu/injection_container.dart' as di;
 void main() async {
   await di.init();
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -25,6 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(scaffoldBackgroundColor: Colors.white),
         routerConfig: AppRoutes.router,
         localizationsDelegates: const [
           FormBuilderLocalizations.delegate,
