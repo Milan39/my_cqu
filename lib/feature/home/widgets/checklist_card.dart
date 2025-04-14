@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:my_cqu/core/constant.dart';
+import 'package:my_cqu/feature/home/entities/important_link_entity.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ChecklistCard extends StatelessWidget {
-  final String imagePath;
-  final String title;
-  final String type;
-  final String link;
+  final LinkCardDetail cardDetail;
 
   const ChecklistCard({
     super.key,
-    required this.imagePath,
-    required this.title,
-    required this.type,
-    this.link = "https://moodle.cqu.edu.au/course/view.php?id=86559",
+    required this.cardDetail
   });
 
   @override
@@ -40,11 +36,11 @@ class ChecklistCard extends StatelessWidget {
         children: [
           SizedBox(
             width: double.infinity,
-            child: Image.asset(imagePath, fit: BoxFit.contain),
+            child: cardDetail.isSvg? SvgPicture.asset(cardDetail.imagePath): Image.asset(cardDetail.imagePath, fit: BoxFit.contain),
           ),
           Gap(5.h),
           Text(
-            title,
+            cardDetail.title,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
@@ -54,7 +50,7 @@ class ChecklistCard extends StatelessWidget {
           Gap(5.h),
 
           Text(
-            type,
+            cardDetail.type,
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
               fontSize: 12.sp,
               fontWeight: FontWeight.w400,
@@ -63,7 +59,7 @@ class ChecklistCard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              launchUrl(Uri.parse(link));
+              launchUrl(Uri.parse(cardDetail.link));
             },
             style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
