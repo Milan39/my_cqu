@@ -21,10 +21,14 @@ class HomeScreenLayout extends StatelessWidget {
               HomeTab(),
               Gap(10.h),
               Divider(color: kSecondaryGrey),
+              Gap(5.h),
               Expanded(
-                child: IndexedStack(
-                  index: state.currentTab,
-                  children: state.pages,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  child: IndexedStack(
+                    index: state.currentTab,
+                    children: state.pages,
+                  ),
                 ),
               ),
             ],

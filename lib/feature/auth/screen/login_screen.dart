@@ -49,140 +49,138 @@ class LoginScreen extends StatelessWidget {
             body: SafeArea(
               child: ListView(
                 children: [
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.h),
-                      child: FormBuilder(
-                        key: formKey,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Gap(10.h),
-                            SvgPicture.asset(
-                              'assets/icons/logo.svg',
-                              height: 70.h,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.h),
+                    child: FormBuilder(
+                      key: formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Gap(10.h),
+                          SvgPicture.asset(
+                            'assets/icons/logo.svg',
+                            height: 70.h,
+                          ),
+                          Gap(30.h),
+                          LoginText(
+                            text: "Login",
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          LoginText(
+                            text:
+                                "Sign in with your CQUni Username or email \naddress",
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
+                            textColor: kSecondaryGrey,
+                          ),
+                          Gap(30.h),
+                          CustomTextField(
+                            name: 'username',
+                            title: "Email",
+                            hasAstric: true,
+                            validator: FormBuilderValidators.compose([
+                              FormBuilderValidators.required(),
+                              FormBuilderValidators.email(),
+                            ]),
+                            decoration: textFieldDecoration(
+                              radius: 60.sp,
+                              hintText: 'Your username or email address',
                             ),
-                            Gap(30.h),
-                            LoginText(
-                              text: "Login",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            LoginText(
-                              text:
-                                  "Sign in with your CQUni Username or email \naddress",
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400,
-                              textColor: kSecondaryGrey,
-                            ),
-                            Gap(30.h),
-                            CustomTextField(
-                              name: 'username',
-                              title: "Email",
-                              hasAstric: true,
-                              validator: FormBuilderValidators.compose([
-                                FormBuilderValidators.required(),
-                                FormBuilderValidators.email(),
-                              ]),
-                              decoration: textFieldDecoration(
-                                radius: 60.sp,
-                                hintText: 'Your username or email address',
+                          ),
+                          Gap(15.h),
+                          CustomTextField(
+                            name: 'password',
+                            title: "Password",
+                            hasAstric: true,
+                            obscureText: state.hidePassword,
+                            validator: FormBuilderValidators.compose([
+                              FormBuilderValidators.required(),
+                              FormBuilderValidators.password(
+                                maxLength: 10,
+                                minLength: 8,
                               ),
+                            ]),
+                            decoration: passwordFieldDecoration(
+                              suffixIcon: VisibilityIconButton(
+                                onTap: () {
+                                  context
+                                      .read<LoginCubit>()
+                                      .togglePassword();
+                                },
+                                isVisible: state.hidePassword,
+                              ),
+                              radius: 60.sp,
+                              hintText: 'Your password',
                             ),
-                            Gap(15.h),
-                            CustomTextField(
-                              name: 'password',
-                              title: "Password",
-                              hasAstric: true,
-                              obscureText: state.hidePassword,
-                              validator: FormBuilderValidators.compose([
-                                FormBuilderValidators.required(),
-                                FormBuilderValidators.password(
-                                  maxLength: 10,
-                                  minLength: 8,
-                                ),
-                              ]),
-                              decoration: passwordFieldDecoration(
-                                suffixIcon: VisibilityIconButton(
-                                  onTap: () {
+                          ),
+                          Gap(30.h),
+                          GestureDetector(
+                            onTap:
+                                () =>
                                     context
                                         .read<LoginCubit>()
-                                        .togglePassword();
-                                  },
-                                  isVisible: state.hidePassword,
-                                ),
-                                radius: 60.sp,
-                                hintText: 'Your password',
-                              ),
-                            ),
-                            Gap(30.h),
-                            GestureDetector(
-                              onTap:
-                                  () =>
-                                      context
-                                          .read<LoginCubit>()
-                                          .toggleIsRemembered(),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(2.sp),
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: kSecondaryGrey,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        5.sp,
-                                      ),
+                                        .toggleIsRemembered(),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(2.sp),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: kSecondaryGrey,
+                                    ),
+                                    borderRadius: BorderRadius.circular(
+                                      5.sp,
+                                    ),
+                                    color:
+                                        state.isRemembered
+                                            ? kBrandColor
+                                            : Colors.transparent,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.done,
+                                      size: 18.h,
                                       color:
                                           state.isRemembered
-                                              ? kBrandColor
-                                              : Colors.transparent,
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.done,
-                                        size: 18.h,
-                                        color:
-                                            state.isRemembered
-                                                ? Colors.white
-                                                : kBackgroundColor,
-                                      ),
+                                              ? Colors.white
+                                              : kBackgroundColor,
                                     ),
                                   ),
-                                  Gap(10.w),
-                                  LoginText(
-                                    text: "Remember Me",
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ],
-                              ),
+                                ),
+                                Gap(10.w),
+                                LoginText(
+                                  text: "Remember Me",
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ],
                             ),
-                            Gap(20.h),
-                            CustomButton(
-                              text: "Login",
-                              isLoading:
-                                  state.loginStatus == LoginStatus.loading,
-                              backgroundColor: kBrandColor,
-                              borderRadius: 50,
-                              onTap: () {
-                                if (state.loginStatus !=
-                                    LoginStatus.loading) {
-                                  final isValid =
-                                      formKey.currentState
-                                          ?.saveAndValidate() ??
-                                      false;
-                                  if (isValid) {
-                                    context.read<LoginCubit>().loginUser();
-                                  } else {
-                                    formKey.currentState?.validate();
-                                  }
+                          ),
+                          Gap(20.h),
+                          CustomButton(
+                            text: "Login",
+                            isLoading:
+                                state.loginStatus == LoginStatus.loading,
+                            backgroundColor: kBrandColor,
+                            borderRadius: 50,
+                            onTap: () {
+                              if (state.loginStatus !=
+                                  LoginStatus.loading) {
+                                final isValid =
+                                    formKey.currentState
+                                        ?.saveAndValidate() ??
+                                    false;
+                                if (isValid) {
+                                  context.read<LoginCubit>().loginUser();
+                                } else {
+                                  formKey.currentState?.validate();
                                 }
-                              },
-                            ),
-                          ],
-                        ),
+                              }
+                            },
+                          ),
+                        ],
                       ),
                     ),
                   ),

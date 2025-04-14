@@ -18,6 +18,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       scrolledUnderElevation: 0.0,
       surfaceTintColor: Colors.white,
+      leading: null,
       elevation: 0.0,
       title: Text(
         title,
