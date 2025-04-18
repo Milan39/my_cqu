@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:my_cqu/core/constant.dart';
 import 'package:my_cqu/feature/home/cubit/home_screen_cubit/home_screen_cubit.dart';
 import 'package:my_cqu/feature/home/widgets/home_tab.dart';
-import 'package:my_cqu/injection_container.dart';
+import 'package:my_cqu/init_dependencies.dart';
 
 class HomeScreenLayout extends StatelessWidget {
   const HomeScreenLayout({super.key});

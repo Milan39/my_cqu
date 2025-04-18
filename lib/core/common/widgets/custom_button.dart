@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_cqu/core/material/loading_indicator.dart';
+import 'package:my_cqu/core/common/widgets/loading_indicator.dart';
 
 class CustomButton extends StatelessWidget {
   final Function()? onTap;

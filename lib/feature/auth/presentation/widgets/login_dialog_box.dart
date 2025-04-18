@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_cqu/core/constant.dart';
-import 'package:my_cqu/core/material/custom_button.dart';
+import 'package:my_cqu/core/common/widgets/custom_button.dart';
 
 class LoginDialogBox extends StatelessWidget {
   final String title;

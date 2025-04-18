@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:my_cqu/core/constant.dart';
-import 'package:my_cqu/core/material/custom_button.dart';
+import 'package:my_cqu/core/common/widgets/custom_button.dart';
 
 class NoticeBoardCard extends StatelessWidget {
   const NoticeBoardCard({super.key});

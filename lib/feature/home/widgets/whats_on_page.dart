@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:my_cqu/core/constant.dart';
+import 'package:my_cqu/feature/home/cubit/important_link_cubit/important_link_cubit.dart';
 import 'package:my_cqu/feature/home/widgets/checklist_card.dart';
+import 'package:my_cqu/init_dependencies.dart';
 
-import '../../../injection_container.dart';
-import '../cubit/important_link_cubit/important_link_cubit.dart';
 
 class WhatsOnPage extends StatelessWidget {
   const WhatsOnPage({super.key});

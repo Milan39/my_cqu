@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:my_cqu/app_routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:my_cqu/injection_container.dart' as di;
+import 'package:my_cqu/init_dependencies.dart';
 
 void main() async {
-  await di.init();
+  await initDependencies();
   runApp(const MyApp());
 }
 

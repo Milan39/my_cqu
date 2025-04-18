@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_cqu/feature/splash/cubit/splash_cubit.dart';
-import 'package:my_cqu/injection_container.dart';
+import 'package:my_cqu/init_dependencies.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

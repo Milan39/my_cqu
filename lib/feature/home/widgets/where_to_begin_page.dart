@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:my_cqu/feature/home/widgets/checklist_card.dart';
-import 'package:my_cqu/injection_container.dart';
+import 'package:my_cqu/init_dependencies.dart';
 
 import '../../../core/constant.dart';
 import '../cubit/important_link_cubit/important_link_cubit.dart';

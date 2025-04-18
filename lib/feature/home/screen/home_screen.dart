@@ -9,7 +9,7 @@ import 'package:my_cqu/feature/home/widgets/bottom_navbar.dart';
 import 'package:my_cqu/feature/home/widgets/home_app_bar.dart';
 import 'package:my_cqu/feature/study/screen/study_screen.dart';
 import 'package:my_cqu/feature/support/screen/support_screen.dart';
-import 'package:my_cqu/injection_container.dart';
+import 'package:my_cqu/init_dependencies.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
