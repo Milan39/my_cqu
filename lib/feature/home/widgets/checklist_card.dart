@@ -4,15 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:my_cqu/core/constant.dart';
 import 'package:my_cqu/feature/home/entities/important_link_entity.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ChecklistCard extends StatelessWidget {
   final LinkCardDetail cardDetail;
+  final Function()? onTap;
 
-  const ChecklistCard({
-    super.key,
-    required this.cardDetail
-  });
+  const ChecklistCard({super.key, required this.cardDetail, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +33,10 @@ class ChecklistCard extends StatelessWidget {
         children: [
           SizedBox(
             width: double.infinity,
-            child: cardDetail.isSvg? SvgPicture.asset(cardDetail.imagePath): Image.asset(cardDetail.imagePath, fit: BoxFit.contain),
+            child:
+                cardDetail.isSvg
+                    ? SvgPicture.asset(cardDetail.imagePath)
+                    : Image.asset(cardDetail.imagePath, fit: BoxFit.contain),
           ),
           Gap(5.h),
           Text(
@@ -57,10 +57,9 @@ class ChecklistCard extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+          // launchUrl(Uri.parse(cardDetail.link));
           TextButton(
-            onPressed: () {
-              launchUrl(Uri.parse(cardDetail.link));
-            },
+            onPressed: onTap,
             style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
               visualDensity: VisualDensity(horizontal: -4, vertical: -4),

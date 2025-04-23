@@ -10,11 +10,11 @@ import 'package:my_cqu/core/common/widgets/custom_button.dart';
 import 'package:my_cqu/core/common/widgets/custom_text_field.dart';
 import 'package:my_cqu/core/common/widgets/field_decoration.dart';
 import 'package:my_cqu/core/utils/helpers.dart';
-import 'package:my_cqu/feature/auth/presentation/cubit/login_cubit.dart';
-import 'package:my_cqu/feature/auth/presentation/widgets/login_dialog_box.dart';
-import 'package:my_cqu/feature/auth/presentation/widgets/login_text.dart';
+import 'package:my_cqu/feature/auth/cubit/login_cubit.dart';
+import 'package:my_cqu/feature/auth/widgets/login_dialog_box.dart';
+import 'package:my_cqu/feature/auth/widgets/login_text.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:my_cqu/feature/auth/presentation/widgets/visibility_icon_button.dart';
+import 'package:my_cqu/feature/auth/widgets/visibility_icon_button.dart';
 import 'package:my_cqu/init_dependencies.dart';
 
 

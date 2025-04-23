@@ -3,6 +3,13 @@ part of 'init_dependencies.dart';
 final sl = GetIt.instance;
 
 Future<void> initDependencies() async {
+ final supabase=  await Supabase.initialize(
+    url: AppSecret.supabaseUrl,
+    anonKey: AppSecret.supaBaseAnoyKey,
+  );
+  sl.registerLazySingleton(()=> supabase.client);
+
+
   _initExternalDependencies();
   _initAuth();
   _initHomeDependencies();

@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_cqu/init_dependencies.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initDependencies();
   runApp(const MyApp());
 }
