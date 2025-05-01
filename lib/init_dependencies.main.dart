@@ -22,6 +22,7 @@ void _initExternalDependencies() {
 void _initAuth() {
   sl.registerFactory(() => SplashCubit(secureStorage: sl()));
   sl.registerFactory(() => LoginCubit());
+  sl.registerFactory(()=> ScreenCubit());
 }
 
 void _initHomeDependencies() {

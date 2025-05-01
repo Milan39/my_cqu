@@ -55,18 +55,4 @@ class LoginCubit extends Cubit<LoginState> {
       emit(state.copyWith(loginStatus: LoginStatus.failure));
     }
   }
-
-  // void handleOnChanged({bool isPassword = true}) {
-  //   final field = isPassword ? 'password' : 'username';
-  //   final isFieldValid = formKey.currentState?.fields['field']?.validate();
-  //
-  // }
-
-  void togglePassword() {
-    emit(state.copyWith(hidePassword: !state.hidePassword));
-  }
-
-  void toggleIsRemembered() {
-    emit(state.copyWith(isRemembered: !state.isRemembered));
-  }
 }
